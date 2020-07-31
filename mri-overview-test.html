@@ -4152,6 +4152,34 @@ _fnFilterColumn:Cb,_fnFilter:Bb,_fnFilterCreateSearch:Ta,_fnEscapeRegex:Ua,_fnFi
 _fnSortFlatten:Y,_fnSort:rb,_fnSortAria:Nb,_fnSortListener:Za,_fnSortAttachListener:Qa,_fnSortingClasses:Aa,_fnSortData:Mb,_fnSaveState:Ba,_fnLoadState:Ob,_fnSettingsFromNode:Ca,_fnLog:O,_fnMap:M,_fnBindAction:$a,_fnCallbackReg:E,_fnCallbackFire:A,_fnLengthOverflow:Wa,_fnRenderer:Ra,_fnDataSource:D,_fnRowAttributes:Pa,_fnExtend:ab,_fnCalculateEnd:function(){}});f.fn.dataTable=q;q.$=f;f.fn.dataTableSettings=q.settings;f.fn.dataTableExt=q.ext;f.fn.DataTable=function(a){return f(this).dataTable(a).api()};
 f.each(q,function(a,b){f.fn.DataTable[a]=b});return f.fn.dataTable});
 </script>
+<style type="text/css">table.dataTable tr.dtrg-group td{background-color:#e0e0e0}table.dataTable tr.dtrg-group.dtrg-level-0 td{font-weight:bold}table.dataTable tr.dtrg-group.dtrg-level-1 td,table.dataTable tr.dtrg-group.dtrg-level-2 td{background-color:#f0f0f0;padding-top:0.25em;padding-bottom:0.25em;padding-left:2em;font-size:0.9em}table.dataTable tr.dtrg-group.dtrg-level-2 td{background-color:#f3f3f3}
+</style>
+<script>/*!
+   Copyright 2017-2019 SpryMedia Ltd.
+
+ This source file is free software, available under the following license:
+   MIT license - http://datatables.net/license/mit
+
+ This source file is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ or FITNESS FOR A PARTICULAR PURPOSE. See the license files for details.
+
+ For details please refer to: http://www.datatables.net
+ RowGroup 1.1.1
+ ©2017-2019 SpryMedia Ltd - datatables.net/license
+*/
+var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.findInternal=function(a,d,c){a instanceof String&&(a=String(a));for(var e=a.length,f=0;f<e;f++){var h=a[f];if(d.call(c,h,f,a))return{i:f,v:h}}return{i:-1,v:void 0}};$jscomp.ASSUME_ES5=!1;$jscomp.ASSUME_NO_NATIVE_MAP=!1;$jscomp.ASSUME_NO_NATIVE_SET=!1;$jscomp.SIMPLE_FROUND_POLYFILL=!1;
+$jscomp.defineProperty=$jscomp.ASSUME_ES5||"function"==typeof Object.defineProperties?Object.defineProperty:function(a,d,c){a!=Array.prototype&&a!=Object.prototype&&(a[d]=c.value)};$jscomp.getGlobal=function(a){return"undefined"!=typeof window&&window===a?a:"undefined"!=typeof global&&null!=global?global:a};$jscomp.global=$jscomp.getGlobal(this);
+$jscomp.polyfill=function(a,d,c,e){if(d){c=$jscomp.global;a=a.split(".");for(e=0;e<a.length-1;e++){var f=a[e];f in c||(c[f]={});c=c[f]}a=a[a.length-1];e=c[a];d=d(e);d!=e&&null!=d&&$jscomp.defineProperty(c,a,{configurable:!0,writable:!0,value:d})}};$jscomp.polyfill("Array.prototype.find",function(a){return a?a:function(a,c){return $jscomp.findInternal(this,a,c).v}},"es6","es3");
+(function(a){"function"===typeof define&&define.amd?define(["jquery","datatables.net"],function(d){return a(d,window,document)}):"object"===typeof exports?module.exports=function(d,c){d||(d=window);c&&c.fn.dataTable||(c=require("datatables.net")(d,c).$);return a(c,d,d.document)}:a(jQuery,window,document)})(function(a,d,c,e){var f=a.fn.dataTable,h=function(b,g){if(!f.versionCheck||!f.versionCheck("1.10.8"))throw"RowGroup requires DataTables 1.10.8 or newer";this.c=a.extend(!0,{},f.defaults.rowGroup,
+h.defaults,g);this.s={dt:new f.Api(b)};this.dom={};b=this.s.dt.settings()[0];if(g=b.rowGroup)return g;b.rowGroup=this;this._constructor()};a.extend(h.prototype,{dataSrc:function(b){if(b===e)return this.c.dataSrc;var g=this.s.dt;this.c.dataSrc=b;a(g.table().node()).triggerHandler("rowgroup-datasrc.dt",[g,b]);return this},disable:function(){this.c.enable=!1;return this},enable:function(b){if(!1===b)return this.disable();this.c.enable=!0;return this},_constructor:function(){var b=this,a=this.s.dt;a.on("draw.dtrg",
+function(){b.c.enable&&b._draw()});a.on("column-visibility.dt.dtrg responsive-resize.dt.dtrg",function(){b._adjustColspan()});a.on("destroy",function(){a.off(".dtrg")});a.on("responsive-resize.dt",function(){b._adjustColspan()})},_adjustColspan:function(){a("tr."+this.c.className,this.s.dt.table().body()).find("td").attr("colspan",this._colspan())},_colspan:function(){return this.s.dt.columns().visible().reduce(function(b,a){return b+a},0)},_draw:function(){var b=this._group(0,this.s.dt.rows({page:"current"}).indexes());
+this._groupDisplay(0,b)},_group:function(b,g){for(var c=a.isArray(this.c.dataSrc)?this.c.dataSrc:[this.c.dataSrc],d=f.ext.oApi._fnGetObjectDataFn(c[b]),h=this.s.dt,l,n,m=[],k=0,p=g.length;k<p;k++){var q=g[k];l=h.row(q).data();l=d(l);if(null===l||l===e)l=this.c.emptyDataGroup;if(n===e||l!==n)m.push({dataPoint:l,rows:[]}),n=l;m[m.length-1].rows.push(q)}if(c[b+1]!==e)for(k=0,p=m.length;k<p;k++)m[k].children=this._group(b+1,m[k].rows);return m},_groupDisplay:function(b,a){for(var c=this.s.dt,g,d=0,f=
+a.length;d<f;d++){var e=a[d],h=e.dataPoint,k=e.rows;this.c.startRender&&(g=this.c.startRender.call(this,c.rows(k),h,b),(g=this._rowWrap(g,this.c.startClassName,b))&&g.insertBefore(c.row(k[0]).node()));this.c.endRender&&(g=this.c.endRender.call(this,c.rows(k),h,b),(g=this._rowWrap(g,this.c.endClassName,b))&&g.insertAfter(c.row(k[k.length-1]).node()));e.children&&this._groupDisplay(b+1,e.children)}},_rowWrap:function(b,g,c){if(null===b||""===b)b=this.c.emptyDataGroup;return b===e||null===b?null:("object"===
+typeof b&&b.nodeName&&"tr"===b.nodeName.toLowerCase()?a(b):b instanceof a&&b.length&&"tr"===b[0].nodeName.toLowerCase()?b:a("<tr/>").append(a("<td/>").attr("colspan",this._colspan()).append(b))).addClass(this.c.className).addClass(g).addClass("dtrg-level-"+c)}});h.defaults={className:"dtrg-group",dataSrc:0,emptyDataGroup:"No group",enable:!0,endClassName:"dtrg-end",endRender:null,startClassName:"dtrg-start",startRender:function(b,a){return a}};h.version="1.1.1";a.fn.dataTable.RowGroup=h;a.fn.DataTable.RowGroup=
+h;f.Api.register("rowGroup()",function(){return this});f.Api.register("rowGroup().disable()",function(){return this.iterator("table",function(a){a.rowGroup&&a.rowGroup.enable(!1)})});f.Api.register("rowGroup().enable()",function(a){return this.iterator("table",function(b){b.rowGroup&&b.rowGroup.enable(a===e?!0:a)})});f.Api.register("rowGroup().dataSrc()",function(a){return a===e?this.context[0].rowGroup.dataSrc():this.iterator("table",function(b){b.rowGroup&&b.rowGroup.dataSrc(a)})});a(c).on("preInit.dt.dtrg",
+function(b,c,d){"dt"===b.namespace&&(b=c.oInit.rowGroup,d=f.defaults.rowGroup,b||d)&&(d=a.extend({},d,b),!1!==b&&new h(c,d))});return h});
+</script>
 <style type="text/css">
 .container-fluid.crosstalk-bscols {
 margin-left: -30px;
@@ -4419,11 +4447,7 @@ div.tocify {
 
 </div>
 <div id="overview" class="section level1">
-<h1>OVERVIEW</h1>
-#
-<div style="margin-bottom:50px;">
-#
-</div>
+<h1>Overview</h1>
 <p>Goal is to create an interactive flow chart for the steps required for MRI/fMRI analyses</p>
 <p>This is a test run to see if we can get a plot up and running</p>
 <p>Here is a helpful link for formatting: <a href="https://bookdown.org/yihui/rmarkdown/html-document.html#document-dependencies" class="uri">https://bookdown.org/yihui/rmarkdown/html-document.html#document-dependencies</a></p>
@@ -4439,8 +4463,8 @@ div.tocify {
 </div>
 <div id="flow-chart" class="section level3">
 <h3>Flow chart</h3>
-<div id="htmlwidget-bdab4054214a62730b7c" style="width:672px;height:480px;" class="collapsibleTree html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bdab4054214a62730b7c">{"x":{"data":{"name":"preprocessing","children":[{"name":"Ana","children":[{"name":"Bill"},{"name":"Larry"}]},{"name":"Bill","children":[{"name":"Claudette"},{"name":"Danny"},{"name":"Erika"}]},{"name":"Claudette","children":[{"name":"Fred"},{"name":"Grace"}]},{"name":"Danny","children":[{"name":"Henri"}]},{"name":"Fred","children":[{"name":"Ida"},{"name":"Joaquin"}]},{"name":"Grace","children":[{"name":"Kate"}]},{"name":"Larry","children":[{"name":"Mindy"},{"name":"Nicholas"}]},{"name":"Nicholas","children":[{"name":"Odette"},{"name":"Peter"}]}]},"options":{"hierarchy":["Manager","Employee"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":false,"zoomable":true,"margin":{"top":20,"bottom":20,"left":90,"right":70},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-14ffdd5bb82d6782283e" style="width:672px;height:480px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-14ffdd5bb82d6782283e">{"x":{"data":{"name":"preprocessing","children":[{"name":"Ana","children":[{"name":"Bill"},{"name":"Larry"}]},{"name":"Bill","children":[{"name":"Claudette"},{"name":"Danny"},{"name":"Erika"}]},{"name":"Claudette","children":[{"name":"Fred"},{"name":"Grace"}]},{"name":"Danny","children":[{"name":"Henri"}]},{"name":"Fred","children":[{"name":"Ida"},{"name":"Joaquin"}]},{"name":"Grace","children":[{"name":"Kate"}]},{"name":"Larry","children":[{"name":"Mindy"},{"name":"Nicholas"}]},{"name":"Nicholas","children":[{"name":"Odette"},{"name":"Peter"}]}]},"options":{"hierarchy":["Manager","Employee"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":false,"zoomable":true,"margin":{"top":20,"bottom":20,"left":90,"right":70},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="resources" class="section level3">
 <h3>Resources</h3>
@@ -4456,8 +4480,8 @@ div.tocify {
 </div>
 <div id="flow-chart-1" class="section level3">
 <h3>Flow chart</h3>
-<div id="htmlwidget-b873da4178cbeb34c839" style="width:672px;height:480px;" class="collapsibleTree html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b873da4178cbeb34c839">{"x":{"data":{"name":"org","children":[{"name":"Ana","children":[{"name":"Bill"},{"name":"Larry"}]},{"name":"Bill","children":[{"name":"Claudette"},{"name":"Danny"},{"name":"Erika"}]},{"name":"Claudette","children":[{"name":"Fred"},{"name":"Grace"}]},{"name":"Danny","children":[{"name":"Henri"}]},{"name":"Fred","children":[{"name":"Ida"},{"name":"Joaquin"}]},{"name":"Grace","children":[{"name":"Kate"}]},{"name":"Larry","children":[{"name":"Mindy"},{"name":"Nicholas"}]},{"name":"Nicholas","children":[{"name":"Odette"},{"name":"Peter"}]}]},"options":{"hierarchy":["Manager","Employee"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":false,"zoomable":true,"margin":{"top":20,"bottom":20,"left":40,"right":70},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e3779b03df548f3ceab9" style="width:672px;height:480px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e3779b03df548f3ceab9">{"x":{"data":{"name":"org","children":[{"name":"Ana","children":[{"name":"Bill"},{"name":"Larry"}]},{"name":"Bill","children":[{"name":"Claudette"},{"name":"Danny"},{"name":"Erika"}]},{"name":"Claudette","children":[{"name":"Fred"},{"name":"Grace"}]},{"name":"Danny","children":[{"name":"Henri"}]},{"name":"Fred","children":[{"name":"Ida"},{"name":"Joaquin"}]},{"name":"Grace","children":[{"name":"Kate"}]},{"name":"Larry","children":[{"name":"Mindy"},{"name":"Nicholas"}]},{"name":"Nicholas","children":[{"name":"Odette"},{"name":"Peter"}]}]},"options":{"hierarchy":["Manager","Employee"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":false,"zoomable":true,"margin":{"top":20,"bottom":20,"left":40,"right":70},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="resources-1" class="section level3">
 <h3>Resources</h3>
@@ -4469,8 +4493,8 @@ div.tocify {
 </div>
 <div id="vocab" class="section level1">
 <h1>Vocab</h1>
-<div id="htmlwidget-9d748aa77f0c303ac329" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9d748aa77f0c303ac329">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27"],["MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition",null,null,null,null,null,null,null,null,"Pre-processing",null,null,null,null,null,"Post-processing",null,null,null,null,null,"Statistical analyses"],["volume","voxels","3D matrix","repetition time","acquisition time","field of view",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,"TR","TA","FOV",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],["volume data recorded at one single time point representing the space that the brain is occupying","the unit used to measure MRI data in 3D. Each voxel has a specific dimension (e.g. 1mm x 1mm x 1mm; a cube)","an arranged standard anatomical volume with an isotropic voxel resolution of 1mm contains almost 17 million voxels.","time required to scan one volume","time required to scan one slice. TA = TR -(TR/number of slices)","defines the extent of a slice, e.g. 256mm x 256mm",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>section<\/th>\n      <th>term<\/th>\n      <th>abbreviation<\/th>\n      <th>definition<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f5aeae829d6b42866b04" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f5aeae829d6b42866b04">{"x":{"filter":"none","extensions":["RowGroup"],"data":[["MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Post-processing","Post-processing","Post-processing","Post-processing","Post-processing","Post-processing","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses"],["volume","voxels","3D matrix","repetition time","acquisition time","field of view","registration","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],[null,null,null,"TR","TA","FOV",null,"test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],["volume data recorded at one single time point representing the space that the brain is occupying","the unit used to measure MRI data in 3D. Each voxel has a specific dimension (e.g. 1mm x 1mm x 1mm; a cube)","an arranged standard anatomical volume with an isotropic voxel resolution of 1mm contains almost 17 million voxels.","time required to scan one volume","time required to scan one slice. TA = TR -(TR/number of slices)","defines the extent of a slice, e.g. 256mm x 256mm","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>section<\/th>\n      <th>term<\/th>\n      <th>abbreviation<\/th>\n      <th>definition<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"rowGroup":{"dataSrc":0},"columnDefs":[{"visible":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 
 

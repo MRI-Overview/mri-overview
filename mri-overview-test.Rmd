@@ -115,8 +115,18 @@ collapsibleTree(org, c("Manager", "Employee"), collapsed = FALSE)
 url <- 'docs.google.com/spreadsheets/d/1U3Qi4Ns4POn9R8m0SEua6zU0cO5jjseMq3WrctPEtyo/edit?usp=slack&ts=5f24816f'
 #make into sheet
 vocab <- gsheet2tbl(url)
+
+
+
+
+
 #display interactive plot
-datatable(vocab)
+datatable(vocab,
+          #class = 'cell-border stripe',
+          rownames = F, 
+          extensions = 'RowGroup', 
+          options = list(rowGroup = list(dataSrc=c(0)),
+                         columnDefs = list(list(visible=FALSE, targets=c(0)))))
 
 ```
 
