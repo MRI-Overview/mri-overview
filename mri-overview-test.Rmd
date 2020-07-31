@@ -1,11 +1,10 @@
 ---
 title: "mri-overview"
 output:
-  html_document:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
     toc: true
-    toc_float:
-      collapsed: false
-      smooth_scroll: false
 ---
 <div style="margin-bottom:100px;">
 ```{r setup, include=FALSE}
@@ -24,13 +23,15 @@ Here is a helpful link for formatting: <https://bookdown.org/yihui/rmarkdown/htm
 <div style="margin-bottom:50px;">
 </div>
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 #Run library collapsible Tree
 library("collapsibleTree")
 # gsheet helps load in google data
 library(gsheet)
 # DT allows for interactive table
 library(DT)
+#Read in csvs (for the time being until everything is on drive)
+library(readr)
 
 ```
 
@@ -40,33 +41,13 @@ library(DT)
 </div>
 ### Flow chart
 ```{r, echo=FALSE, results="hide"}
-
-
-
-#Here we can organize the nodes
-
-
-preprocessing <- data.frame(
-  Manager = c(
-    NA, "Ana", "Ana", "Bill", "Bill", "Bill", "Claudette", "Claudette", "Danny",
-    "Fred", "Fred", "Grace", "Larry", "Larry", "Nicholas", "Nicholas"
-  ),
-  Employee = c(
-    "Ana", "Bill", "Larry", "Claudette", "Danny", "Erika", "Fred", "Grace",
-    "Henri", "Ida", "Joaquin", "Kate", "Mindy", "Nicholas", "Odette", "Peter"
-  ),
-  Title = c(
-    "President", "VP Operations", "VP Finance", "Director", "Director", "Scientist",
-    "Manager", "Manager", "Jr Scientist", "Operator", "Operator", "Associate",
-    "Analyst", "Director", "Accountant", "Accountant"
-  )
-)
-
+#load in data
+preprocessing <- read_csv("preprocessing.csv")
 
 ```
 
 ```{r, echo=FALSE}
-collapsibleTree(preprocessing, c("Manager", "Employee"), collapsed = FALSE)
+collapsibleTree(preprocessing, c("Resource", "Link"), collapsed = FALSE)
 ```
 
 ### Resources
@@ -74,7 +55,7 @@ collapsibleTree(preprocessing, c("Manager", "Employee"), collapsed = FALSE)
 </div>
 
 
-## fMRI preprocessing steps {.tabset .tabset-fade}
+## fMRI post-processing steps {.tabset .tabset-fade}
 <div style="margin-bottom:50px;">
 </div>
 ### Flow chart
@@ -109,16 +90,11 @@ collapsibleTree(org, c("Manager", "Employee"), collapsed = FALSE)
 
 
 # Vocab
-
 ```{r, echo = FALSE}
 #load in most recent vocab URL
 url <- 'docs.google.com/spreadsheets/d/1U3Qi4Ns4POn9R8m0SEua6zU0cO5jjseMq3WrctPEtyo/edit?usp=slack&ts=5f24816f'
 #make into sheet
 vocab <- gsheet2tbl(url)
-
-
-
-
 
 #display interactive plot
 datatable(vocab,
@@ -126,7 +102,9 @@ datatable(vocab,
           rownames = F, 
           extensions = 'RowGroup', 
           options = list(rowGroup = list(dataSrc=c(0)),
-                         columnDefs = list(list(visible=FALSE, targets=c(0)))))
+                         columnDefs = list(list(visible=FALSE, targets=c(0)))
+                         )
+          )
 
 ```
 
