@@ -1,5 +1,15 @@
 ## Welcome to GitHub Pages
 
+
+### Core Project Team:
+* [Nazek Queder](https://github.com/nqueder)
+* [Stepheni Uh](https://github.com/stephuh2)
+* [Allison Londeree](https://github.com/londeree4)
+* [Amelia Miramonti](https://github.com/amelia-m)
+* [Annalysa Lovos](https://github.com/annalysa)
+* [Jinyi Hung](https://github.com/jinyihung)
+
+
 You can use the [editor on GitHub](https://github.com/amelia-m/mri-overview/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
