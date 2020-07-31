@@ -1,0 +1,101 @@
+---
+title: "mri-overview"
+author: "S. Uh"
+date: "7/31/2020"
+output: html_document
+---
+<div style="margin-bottom:100px;">
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+</div>
+
+## OVERVIEW
+<div style="margin-bottom:50px;">
+</div>
+
+Goal is to create an interactive flow chart for the steps required for MRI/fMRI analyses
+
+This is a test run to see if we can get a plot up and running
+
+Here is a helpful link for formatting: <https://bookdown.org/yihui/rmarkdown/html-document.html#document-dependencies>
+
+<div style="margin-bottom:50px;">
+</div>
+
+```{r, echo=FALSE}
+#Run library collapsible Tree
+
+library("collapsibleTree")
+
+```
+
+
+## fMRI preprocessing steps {.tabset .tabset-fade}
+<div style="margin-bottom:50px;">
+</div>
+### Flow chart
+```{r, echo=FALSE, results="hide"}
+#Here we can organize the nodes
+preprocessing <- data.frame(
+  Manager = c(
+    NA, "Ana", "Ana", "Bill", "Bill", "Bill", "Claudette", "Claudette", "Danny",
+    "Fred", "Fred", "Grace", "Larry", "Larry", "Nicholas", "Nicholas"
+  ),
+  Employee = c(
+    "Ana", "Bill", "Larry", "Claudette", "Danny", "Erika", "Fred", "Grace",
+    "Henri", "Ida", "Joaquin", "Kate", "Mindy", "Nicholas", "Odette", "Peter"
+  ),
+  Title = c(
+    "President", "VP Operations", "VP Finance", "Director", "Director", "Scientist",
+    "Manager", "Manager", "Jr Scientist", "Operator", "Operator", "Associate",
+    "Analyst", "Director", "Accountant", "Accountant"
+  )
+)
+
+
+```
+
+```{r, echo=FALSE}
+collapsibleTree(preprocessing, c("Manager", "Employee"), collapsed = FALSE)
+```
+
+### Resources
+<div style="margin-bottom:50px;">
+</div>
+
+
+## fMRI preprocessing steps {.tabset .tabset-fade}
+<div style="margin-bottom:50px;">
+</div>
+### Flow chart
+```{r, echo=FALSE, results="hide"}
+#Here we can organize the nodes
+org <- data.frame(
+  Manager = c(
+    NA, "Ana", "Ana", "Bill", "Bill", "Bill", "Claudette", "Claudette", "Danny",
+    "Fred", "Fred", "Grace", "Larry", "Larry", "Nicholas", "Nicholas"
+  ),
+  Employee = c(
+    "Ana", "Bill", "Larry", "Claudette", "Danny", "Erika", "Fred", "Grace",
+    "Henri", "Ida", "Joaquin", "Kate", "Mindy", "Nicholas", "Odette", "Peter"
+  ),
+  Title = c(
+    "President", "VP Operations", "VP Finance", "Director", "Director", "Scientist",
+    "Manager", "Manager", "Jr Scientist", "Operator", "Operator", "Associate",
+    "Analyst", "Director", "Accountant", "Accountant"
+  )
+)
+
+
+```
+
+```{r, echo=FALSE}
+collapsibleTree(org, c("Manager", "Employee"), collapsed = FALSE)
+```
+
+### Resources
+<div style="margin-bottom:50px;">
+</div>
+
+
