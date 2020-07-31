@@ -1,8 +1,11 @@
 ---
 title: "mri-overview"
-author: "S. Uh"
-date: "7/31/2020"
-output: html_document
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
 ---
 <div style="margin-bottom:100px;">
 ```{r setup, include=FALSE}
@@ -10,9 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 </div>
 
-## OVERVIEW
-<div style="margin-bottom:50px;">
-</div>
+# Overview
 
 Goal is to create an interactive flow chart for the steps required for MRI/fMRI analyses
 
@@ -25,8 +26,11 @@ Here is a helpful link for formatting: <https://bookdown.org/yihui/rmarkdown/htm
 
 ```{r, echo=FALSE}
 #Run library collapsible Tree
-
 library("collapsibleTree")
+# gsheet helps load in google data
+library(gsheet)
+# DT allows for interactive table
+library(DT)
 
 ```
 
@@ -36,7 +40,12 @@ library("collapsibleTree")
 </div>
 ### Flow chart
 ```{r, echo=FALSE, results="hide"}
+
+
+
 #Here we can organize the nodes
+
+
 preprocessing <- data.frame(
   Manager = c(
     NA, "Ana", "Ana", "Bill", "Bill", "Bill", "Claudette", "Claudette", "Danny",
@@ -98,4 +107,16 @@ collapsibleTree(org, c("Manager", "Employee"), collapsed = FALSE)
 <div style="margin-bottom:50px;">
 </div>
 
+
+# Vocab
+
+```{r, echo = FALSE}
+#load in most recent vocab URL
+url <- 'docs.google.com/spreadsheets/d/1U3Qi4Ns4POn9R8m0SEua6zU0cO5jjseMq3WrctPEtyo/edit?usp=slack&ts=5f24816f'
+#make into sheet
+vocab <- gsheet2tbl(url)
+#display interactive plot
+datatable(vocab)
+
+```
 
