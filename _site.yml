@@ -1,4 +1,5 @@
 name: "mri-overview-website"
+output_dir: "docs"
 navbar:
   title: "MRI Overview Site"
   left:
