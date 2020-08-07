@@ -2,9 +2,7 @@ name: "mri-overview-website"
 output_dir: "docs"
 navbar:
   title: "MRI Overview Site"
-  left:
-  - text: "Home"
-    href: index.html
+  href: index.html
 output:
   prettydoc::html_pretty:
     theme: architect
