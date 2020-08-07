@@ -1,0 +1,6 @@
+name: "mri-overview-website"
+navbar:
+  title: "MRI Overview Site"
+  left:
+    - text: "Home"
+      href: index.html
