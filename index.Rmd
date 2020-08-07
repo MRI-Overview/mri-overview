@@ -1,5 +1,5 @@
 ---
-title: "mri-overview"
+title: "Neurohackademy 2020 MRI Overview Project"
 ---
 
 <!-- output: -->
@@ -16,11 +16,25 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Overview
 
-Goal is to create an interactive flow chart for the steps required for MRI/fMRI analyses
+Welcome to the mri overview in flowcharts project. Our goal: Bring newcomers together (maybe with some experienced coders!) to develop some flowcharts and/or overview materials that will increase our understanding of the start-to-finish MRI/fMRI/DTI analysis process by collaborating on interactive flowcharts, which we hope can be shared more broadly to help others similarly understand how these processes flow at a macro level. 
 
-This is a test run to see if we can get a plot up and running
+## Collaborators
 
-Here is a helpful link for formatting: <https://bookdown.org/yihui/rmarkdown/html-document.html#document-dependencies>
+
+| Name             | Role     | email                      | GitHub    |     |
+| ---------------- | -------- | -------------------------- | --------- | --- |
+| Annalysa Lovos   | Lead     | aklovos@email.arizona.edu  | annalysa  |     |
+| Amelia Miramonti | Co-Lead  | amelia.miramonti@gmail.com | amelia-m  |     |
+| Stepheni Uh      |          |                            | stephuh2  |     |
+| Allison Londeree |          | alonderee@gmail.com        | londeree4 |     |
+| Nazek Queder     |          | nqueder@hs.uci.edu         | nqueder   |     |
+| Jinyi Hung       |          | jinyihung@gmail.com        | jinyihung |     |
+| Tuba Sahin       |          | tubasahin.psyc@gmail.com   | tubapona  |     |
+| Hulya Aldemir    |          | hulyaald@gmail.com         | hulyaald  |     |
+| Dara Ghahremani  |          | darag@ucla.edu             | daraucla  |     |
+| Neha Sara John   |          | nehasjohn1d@gmail.com      | NSJohn    |     |
+
+
 
 <div style="margin-bottom:50px;">
 </div>

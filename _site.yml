@@ -6,5 +6,7 @@ navbar:
   - text: "Home"
     href: index.html
 output:
-  html_document:
-    theme: cosmo
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+    toc: true
