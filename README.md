@@ -1,47 +1,110 @@
-## Welcome to GitHub Pages
+---
+title: "mri-overview"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+    toc: true
+---
+<div style="margin-bottom:100px;">
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+</div>
 
+# Overview
 
-### Core Project Team:
-* [Nazek Queder](https://github.com/nqueder)
-* [Stepheni Uh](https://github.com/stephuh2)
-* [Allison Londeree](https://github.com/londeree4)
-* [Amelia Miramonti](https://github.com/amelia-m)
-* [Annalysa Lovos](https://github.com/annalysa)
-* [Jinyi Hung](https://github.com/jinyihung)
+Goal is to create an interactive flow chart for the steps required for MRI/fMRI analyses
 
+This is a test run to see if we can get a plot up and running
 
-You can use the [editor on GitHub](https://github.com/amelia-m/mri-overview/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Here is a helpful link for formatting: <https://bookdown.org/yihui/rmarkdown/html-document.html#document-dependencies>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<div style="margin-bottom:50px;">
+</div>
 
-### Markdown
+```{r, echo=FALSE, warning=FALSE}
+#Run library collapsible Tree
+library("collapsibleTree")
+# gsheet helps load in google data
+library(gsheet)
+# DT allows for interactive table
+library(DT)
+#Read in csvs (for the time being until everything is on drive)
+library(readr)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+## fMRI preprocessing steps {.tabset .tabset-fade}
+<div style="margin-bottom:50px;">
+</div>
+### Flow chart
+```{r, echo=FALSE, results="hide"}
+#load in data
+preprocessing <- read_csv("preprocessing.csv")
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/amelia-m/mri-overview/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```
 
-### Support or Contact
+```{r, echo=FALSE}
+collapsibleTree(preprocessing, c("Resource", "Link"), collapsed = FALSE)
+```
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Resources
+<div style="margin-bottom:50px;">
+</div>
+
+
+## fMRI post-processing steps {.tabset .tabset-fade}
+<div style="margin-bottom:50px;">
+</div>
+### Flow chart
+```{r, echo=FALSE, results="hide"}
+#Here we can organize the nodes
+org <- data.frame(
+  Manager = c(
+    NA, "Ana", "Ana", "Bill", "Bill", "Bill", "Claudette", "Claudette", "Danny",
+    "Fred", "Fred", "Grace", "Larry", "Larry", "Nicholas", "Nicholas"
+  ),
+  Employee = c(
+    "Ana", "Bill", "Larry", "Claudette", "Danny", "Erika", "Fred", "Grace",
+    "Henri", "Ida", "Joaquin", "Kate", "Mindy", "Nicholas", "Odette", "Peter"
+  ),
+  Title = c(
+    "President", "VP Operations", "VP Finance", "Director", "Director", "Scientist",
+    "Manager", "Manager", "Jr Scientist", "Operator", "Operator", "Associate",
+    "Analyst", "Director", "Accountant", "Accountant"
+  )
+)
+
+
+```
+
+```{r, echo=FALSE}
+collapsibleTree(org, c("Manager", "Employee"), collapsed = FALSE)
+```
+
+### Resources
+<div style="margin-bottom:50px;">
+</div>
+
+
+# Vocab
+```{r, echo = FALSE}
+#load in most recent vocab URL
+url <- 'docs.google.com/spreadsheets/d/1U3Qi4Ns4POn9R8m0SEua6zU0cO5jjseMq3WrctPEtyo/edit?usp=slack&ts=5f24816f'
+#make into sheet
+vocab <- gsheet2tbl(url)
+
+#display interactive plot
+datatable(vocab,
+          #class = 'cell-border stripe',
+          rownames = F, 
+          extensions = 'RowGroup', 
+          options = list(rowGroup = list(dataSrc=c(0)),
+                         columnDefs = list(list(visible=FALSE, targets=c(0)))
+                         )
+          )
+
+```
+
