@@ -3,5 +3,8 @@ output_dir: "docs"
 navbar:
   title: "MRI Overview Site"
   left:
-    - text: "Home"
-      href: index.html
+  - text: "Home"
+    href: index.html
+output:
+  html_document:
+    theme: cosmo

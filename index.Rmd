@@ -1,11 +1,13 @@
 ---
 title: "mri-overview"
-output:
-  prettydoc::html_pretty:
-    theme: architect
-    highlight: github
-    toc: true
 ---
+
+<!-- output: -->
+<!--   prettydoc::html_pretty: -->
+<!--     theme: architect -->
+<!--     highlight: github -->
+<!--     toc: true -->
+
 <div style="margin-bottom:100px;">
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
