@@ -33,6 +33,8 @@ Welcome to the mri overview in flowcharts project. Our goal: Bring newcomers tog
 | Hulya Aldemir    |          | hulyaald@gmail.com         | hulyaald  |     |
 | Dara Ghahremani  |          | darag@ucla.edu             | daraucla  |     |
 | Neha Sara John   |          | nehasjohn1d@gmail.com      | NSJohn    |     |
+| Ginnie Kim       |          |ginnie.kim@nationwidechildrens.org| ginniekim|  |
+
 
 
 
