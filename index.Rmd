@@ -21,19 +21,19 @@ Welcome to the mri overview in flowcharts project. Our goal: Bring newcomers tog
 ## Collaborators
 
 
-| Name             | Role     | email                      | GitHub    |     |
-| ---------------- | -------- | -------------------------- | --------- | --- |
-| Annalysa Lovos   | Lead     | aklovos@email.arizona.edu  | annalysa  |     |
-| Amelia Miramonti | Co-Lead  | amelia.miramonti@gmail.com | amelia-m  |     |
-| Stepheni Uh      |          |                            | stephuh2  |     |
-| Allison Londeree |          | alonderee@gmail.com        | londeree4 |     |
-| Nazek Queder     |          | nqueder@hs.uci.edu         | nqueder   |     |
-| Jinyi Hung       |          | jinyihung@gmail.com        | jinyihung |     |
-| Tuba Sahin       |          | tubasahin.psyc@gmail.com   | tubapona  |     |
-| Hulya Aldemir    |          | hulyaald@gmail.com         | hulyaald  |     |
-| Dara Ghahremani  |          | darag@ucla.edu             | daraucla  |     |
-| Neha Sara John   |          | nehasjohn1d@gmail.com      | NSJohn    |     |
-| Ginnie Kim       |          |ginnie.kim@nationwidechildrens.org| ginniekim|  |
+| Name             | Role     | email                             | GitHub    | Institution  |
+| ---------------- | -------- | --------------------------------- | --------- | ------------ |
+| Annalysa Lovos   | Lead     | aklovos@email.arizona.edu         | annalysa  | University of Arizona           |
+| Amelia Miramonti | Co-Lead  | amelia.miramonti@gmail.com        | amelia-m  |              |
+| Stepheni Uh      |          |                                   | stephuh2  |              |
+| Allison Londeree |          | alonderee@gmail.com               | londeree4 | The Ohio State University       |
+| Nazek Queder     |          | nqueder@hs.uci.edu                | nqueder   | UC Irvine                       |
+| Jinyi Hung       |          | jinyihung@gmail.com               | jinyihung |              |
+| Tuba Sahin       |          | tubasahin.psyc@gmail.com          | tubapona  |              |
+| Hulya Aldemir    |          | hulyaald@gmail.com                | hulyaald  |              |
+| Dara Ghahremani  |          | darag@ucla.edu                    | daraucla  | UC Los Angeles                  |
+| Neha Sara John   |          | nehasjohn1d@gmail.com             | NSJohn    |              |
+| Ginnie Kim       |          |ginnie.kim@nationwidechildrens.org | ginniekim | Nationwide Children's Hospital  |
 
 
 
@@ -56,18 +56,21 @@ library(readr)
 ```
 
 
-## fMRI preprocessing steps {.tabset .tabset-fade}
+## fMRI Steps {.tabset .tabset-fade}
 <div style="margin-bottom:50px;">
 </div>
 ### Flow chart
 ```{r, echo=FALSE, results="hide"}
-#load in data
-preprocessing <- read_csv("preprocessing.csv")
+
+#load in most recent vocab URL
+contenturl <- 'https://docs.google.com/spreadsheets/d/1OS48G1jEBcArDIN76jh5PFHGoJSeqfGSTE23ve7lfjk/edit?usp=sharing'
+#make into sheet
+content <- gsheet2tbl(contenturl)
 
 ```
 
 ```{r, echo=FALSE}
-collapsibleTree(preprocessing, c("Resource", "Link"), collapsed = FALSE)
+collapsibleTree(content, c("Section", "Node"), collapsed = FALSE)
 ```
 
 ### Resources
@@ -75,33 +78,17 @@ collapsibleTree(preprocessing, c("Resource", "Link"), collapsed = FALSE)
 </div>
 
 
-## fMRI post-processing steps {.tabset .tabset-fade}
+## DTI Steps {.tabset .tabset-fade}
 <div style="margin-bottom:50px;">
 </div>
 ### Flow chart
 ```{r, echo=FALSE, results="hide"}
-#Here we can organize the nodes
-org <- data.frame(
-  Manager = c(
-    NA, "Ana", "Ana", "Bill", "Bill", "Bill", "Claudette", "Claudette", "Danny",
-    "Fred", "Fred", "Grace", "Larry", "Larry", "Nicholas", "Nicholas"
-  ),
-  Employee = c(
-    "Ana", "Bill", "Larry", "Claudette", "Danny", "Erika", "Fred", "Grace",
-    "Henri", "Ida", "Joaquin", "Kate", "Mindy", "Nicholas", "Odette", "Peter"
-  ),
-  Title = c(
-    "President", "VP Operations", "VP Finance", "Director", "Director", "Scientist",
-    "Manager", "Manager", "Jr Scientist", "Operator", "Operator", "Associate",
-    "Analyst", "Director", "Accountant", "Accountant"
-  )
-)
 
 
 ```
 
 ```{r, echo=FALSE}
-collapsibleTree(org, c("Manager", "Employee"), collapsed = FALSE)
+#collapsibleTree(org, c("Manager", "Employee"), collapsed = FALSE)
 ```
 
 ### Resources
@@ -112,9 +99,9 @@ collapsibleTree(org, c("Manager", "Employee"), collapsed = FALSE)
 # Vocab
 ```{r, echo = FALSE}
 #load in most recent vocab URL
-url <- 'docs.google.com/spreadsheets/d/1U3Qi4Ns4POn9R8m0SEua6zU0cO5jjseMq3WrctPEtyo/edit?usp=slack&ts=5f24816f'
+vocaburl <- 'docs.google.com/spreadsheets/d/1U3Qi4Ns4POn9R8m0SEua6zU0cO5jjseMq3WrctPEtyo/edit?usp=slack&ts=5f24816f'
 #make into sheet
-vocab <- gsheet2tbl(url)
+vocab <- gsheet2tbl(vocaburl)
 #remove url creation columns
 selectvocab <- select(vocab, -c("link title","raw url"))
 

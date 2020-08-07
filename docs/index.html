@@ -58,11 +58,11 @@
 <ul>
 <li><a href="#overview">Overview</a><ul>
 <li><a href="#collaborators">Collaborators</a></li>
-<li><a href="#fmri-preprocessing-steps">fMRI preprocessing steps</a><ul>
+<li><a href="#fmri-steps">fMRI Steps</a><ul>
 <li><a href="#flow-chart">Flow chart</a></li>
 <li><a href="#resources">Resources</a></li>
 </ul></li>
-<li><a href="#fmri-post-processing-steps">fMRI post-processing steps</a><ul>
+<li><a href="#dti-steps">DTI Steps</a><ul>
 <li><a href="#flow-chart-1">Flow chart</a></li>
 <li><a href="#resources-1">Resources</a></li>
 </ul></li>
@@ -88,13 +88,20 @@
 <div id="collaborators" class="section level2">
 <h2>Collaborators</h2>
 <table>
+<colgroup>
+<col width="20%" />
+<col width="10%" />
+<col width="42%" />
+<col width="11%" />
+<col width="15%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Name</th>
 <th>Role</th>
 <th>email</th>
 <th>GitHub</th>
-<th></th>
+<th>Institution</th>
 </tr>
 </thead>
 <tbody>
@@ -103,7 +110,7 @@
 <td>Lead</td>
 <td><a href="mailto:aklovos@email.arizona.edu" class="email">aklovos@email.arizona.edu</a></td>
 <td>annalysa</td>
-<td></td>
+<td>University of Arizona</td>
 </tr>
 <tr class="even">
 <td>Amelia Miramonti</td>
@@ -124,14 +131,14 @@
 <td></td>
 <td><a href="mailto:alonderee@gmail.com" class="email">alonderee@gmail.com</a></td>
 <td>londeree4</td>
-<td></td>
+<td>The Ohio State University</td>
 </tr>
 <tr class="odd">
 <td>Nazek Queder</td>
 <td></td>
 <td><a href="mailto:nqueder@hs.uci.edu" class="email">nqueder@hs.uci.edu</a></td>
 <td>nqueder</td>
-<td></td>
+<td>UC Irvine</td>
 </tr>
 <tr class="even">
 <td>Jinyi Hung</td>
@@ -159,7 +166,7 @@
 <td></td>
 <td><a href="mailto:darag@ucla.edu" class="email">darag@ucla.edu</a></td>
 <td>daraucla</td>
-<td></td>
+<td>UC Los Angeles</td>
 </tr>
 <tr class="even">
 <td>Neha Sara John</td>
@@ -173,7 +180,7 @@
 <td></td>
 <td><a href="mailto:ginnie.kim@nationwidechildrens.org" class="email">ginnie.kim@nationwidechildrens.org</a></td>
 <td>ginniekim</td>
-<td></td>
+<td>Nationwide Children’s Hospital</td>
 </tr>
 </tbody>
 </table>
@@ -181,21 +188,15 @@
 
 </div>
 </div>
-<div id="fmri-preprocessing-steps" class="section level2 tabset tabset-fade">
-<h2>fMRI preprocessing steps</h2>
+<div id="fmri-steps" class="section level2 tabset tabset-fade">
+<h2>fMRI Steps</h2>
 <div style="margin-bottom:50px;">
 
 </div>
 <div id="flow-chart" class="section level3">
 <h3>Flow chart</h3>
-<pre><code>## Parsed with column specification:
-## cols(
-##   Topic = col_character(),
-##   Resource = col_character(),
-##   Link = col_character()
-## )</code></pre>
-<div id="htmlwidget-2a7f94f1d6b607d27acc" style="width:672px;height:480px;" class="collapsibleTree html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2a7f94f1d6b607d27acc">{"x":{"data":{"name":"preprocessing","children":[{"name":"Problem","children":[{"name":"https:","children":[{"name":"neurohackademy.org/course/reproducibility-in-fmri-what-is-the-problem-5/"}]}]},{"name":"Meta-analysis","children":[{"name":"https:","children":[{"name":"neurohackademy.org/course/meta-analysis-and-reproducibility-2/"}]}]},{"name":"Epistemology to statistics","children":[{"name":"https:","children":[{"name":"neurohackademy.org/course/reproducibility-what-you-need-to-know-from-epistemology-to-statistics/"}]}]},{"name":"interactive exploration","children":[{"name":"https:","children":[{"name":"neurohackademy.org/course/from-interactive-exploration-to-reproducible-data-science-jupyter-binder-travis-and-friends-2/"}]}]}]},"options":{"hierarchy":["Resource","Link"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":false,"zoomable":true,"margin":{"top":20,"bottom":20,"left":90,"right":665},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-eb9da1b98a0626ed4b52" style="width:672px;height:480px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-eb9da1b98a0626ed4b52">{"x":{"data":{"name":"content","children":[{"name":"MRI acquisition"},{"name":"Pre-processing","children":[{"name":"Quality control"},{"name":"Convert files"},{"name":"Swap orientation"},{"name":"Brain extraction"},{"name":"Registration"},{"name":"Segmentation"}]},{"name":"Post-processing"},{"name":"Statistical analyses"}]},"options":{"hierarchy":["Section","Node"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":false,"zoomable":true,"margin":{"top":20,"bottom":20,"left":60,"right":105},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="resources" class="section level3">
 <h3>Resources</h3>
@@ -204,15 +205,13 @@
 </div>
 </div>
 </div>
-<div id="fmri-post-processing-steps" class="section level2 tabset tabset-fade">
-<h2>fMRI post-processing steps</h2>
+<div id="dti-steps" class="section level2 tabset tabset-fade">
+<h2>DTI Steps</h2>
 <div style="margin-bottom:50px;">
 
 </div>
 <div id="flow-chart-1" class="section level3">
 <h3>Flow chart</h3>
-<div id="htmlwidget-648a6351e57b6bd06711" style="width:672px;height:480px;" class="collapsibleTree html-widget"></div>
-<script type="application/json" data-for="htmlwidget-648a6351e57b6bd06711">{"x":{"data":{"name":"org","children":[{"name":"Ana","children":[{"name":"Bill"},{"name":"Larry"}]},{"name":"Bill","children":[{"name":"Claudette"},{"name":"Danny"},{"name":"Erika"}]},{"name":"Claudette","children":[{"name":"Fred"},{"name":"Grace"}]},{"name":"Danny","children":[{"name":"Henri"}]},{"name":"Fred","children":[{"name":"Ida"},{"name":"Joaquin"}]},{"name":"Grace","children":[{"name":"Kate"}]},{"name":"Larry","children":[{"name":"Mindy"},{"name":"Nicholas"}]},{"name":"Nicholas","children":[{"name":"Odette"},{"name":"Peter"}]}]},"options":{"hierarchy":["Manager","Employee"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":false,"zoomable":true,"margin":{"top":20,"bottom":20,"left":40,"right":70},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="resources-1" class="section level3">
 <h3>Resources</h3>
@@ -224,8 +223,8 @@
 </div>
 <div id="vocab" class="section level1">
 <h1>Vocab</h1>
-<div id="htmlwidget-2d73de79b4e51f241d62" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2d73de79b4e51f241d62">{"x":{"filter":"none","extensions":["RowGroup"],"data":[["MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Post-processing","Post-processing","Post-processing","Post-processing","Post-processing","Post-processing","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses"],["volume","voxels","3D matrix","repetition time","acquisition time","field of view","registration","normalization","warping/unwarping","fourier transform","DICOM","nifti","test","test","test","test","test","test","test","test","test","test","test","test","test"],[null,null,null,"TR","TA","FOV",null,null,null,null,null,null,"test","test","test","test","test","test","test","test","test","test","test","test","test"],["volume data recorded at one single time point representing the space that the brain is occupying","the unit used to measure MRI data in 3D. Each voxel has a specific dimension (e.g. 1mm x 1mm x 1mm; a cube)","an arranged standard anatomical volume with an isotropic voxel resolution of 1mm contains almost 17 million voxels.","time required to scan one volume","time required to scan one slice. TA = TR - (TR / number of slices)","defines the extent of a slice, e.g. 256 mm x 256 mm","alignment and overlay of data from 2 images so that common features overlap","test","test","test","common format for raw medical imaging in which the MRI scanner outputs.","most common format for newly generated data.","test","test","test","test","test","test","test","test","test","test","test","test","test"],[null,null,"'<a href='http://www.fmri4newbies.com/'>MRI 4 Newbies<\/a>'",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Section<\/th>\n      <th>Term<\/th>\n      <th>Abbreviation<\/th>\n      <th>Definition<\/th>\n      <th>Link to More Information<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"rowGroup":{"dataSrc":0},"columnDefs":[{"visible":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-717af30a3ddf96f6a322" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-717af30a3ddf96f6a322">{"x":{"filter":"none","extensions":["RowGroup"],"data":[["MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Post-processing","Post-processing","Post-processing","Post-processing","Post-processing","Post-processing","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses"],["volume","voxels","3D matrix","repetition time","acquisition time","field of view","registration","normalization","warping/unwarping","fourier transform","DICOM","nifti","test","test","test","test","test","test","test","test","test","test","test","test","test"],[null,null,null,"TR","TA","FOV",null,null,null,null,null,null,"test","test","test","test","test","test","test","test","test","test","test","test","test"],["volume data recorded at one single time point representing the space that the brain is occupying","the unit used to measure MRI data in 3D. Each voxel has a specific dimension (e.g. 1mm x 1mm x 1mm; a cube)","an arranged standard anatomical volume with an isotropic voxel resolution of 1mm contains almost 17 million voxels.","time required to scan one volume","time required to scan one slice. TA = TR - (TR / number of slices)","defines the extent of a slice, e.g. 256 mm x 256 mm","alignment and overlay of data from 2 images so that common features overlap","test","test","test","common format for raw medical imaging in which the MRI scanner outputs.","most common format for newly generated data.","test","test","test","test","test","test","test","test","test","test","test","test","test"],[null,null,"'<a href='http://www.fmri4newbies.com/'>MRI 4 Newbies<\/a>'",null,null,null,null,"<a href='https://www.frontiersin.org/articles/10.3389/fnins.2019.01249/full'>Effects of Different Normalizations<\/a>",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Section<\/th>\n      <th>Term<\/th>\n      <th>Abbreviation<\/th>\n      <th>Definition<\/th>\n      <th>Link to More Information<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"rowGroup":{"dataSrc":0},"columnDefs":[{"visible":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
     </section>
   </div>
