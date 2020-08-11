@@ -2,17 +2,18 @@
 title: "Neurohackademy 2020 MRI Overview Project"
 ---
 
-<!-- output: -->
-<!--   prettydoc::html_pretty: -->
-<!--     theme: architect -->
-<!--     highlight: github -->
-<!--     toc: true -->
-
 <div style="margin-bottom:100px;">
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
 ```
 </div>
+
+```{r, echo=FALSE, warning=FALSE}
+# First Time edting this site? Uncomment (remove the #) and run this line first! 
+#install.packages("dplyr","collapsibleTree","gsheet","DT","readr")
+
+```
 
 # Overview
 
@@ -40,6 +41,7 @@ Welcome to the mri overview in flowcharts project. Our goal: Bring newcomers tog
 
 <div style="margin-bottom:50px;">
 </div>
+
 
 ```{r, echo=FALSE, warning=FALSE}
 #Data Wrangling
