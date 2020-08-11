@@ -10,14 +10,13 @@ knitr::opts_chunk$set(echo = TRUE)
 </div>
 
 ```{r, echo=FALSE, warning=FALSE}
-# First Time edting this site? Uncomment (remove the #) and run this line first! 
-#install.packages("dplyr","collapsibleTree","gsheet","DT","readr")
-
+# First Time editing this site? Uncomment (remove the #) and run this line first! 
+#install.packages("dplyr","collapsibleTree","gsheet","DT","readr","prettydoc")
 ```
 
 # Overview
 
-Welcome to the mri overview in flowcharts project. Our goal: Bring newcomers together (maybe with some experienced coders!) to develop some flowcharts and/or overview materials that will increase our understanding of the start-to-finish MRI/fMRI/DTI analysis process by collaborating on interactive flowcharts, which we hope can be shared more broadly to help others similarly understand how these processes flow at a macro level. 
+Welcome to the MRI overview in flowcharts project. Our goal: Bring newcomers together (maybe with some experienced coders!) to develop some flowcharts and/or overview materials that will increase our understanding of the start-to-finish MRI/fMRI/DTI analysis process by collaborating on interactive flowcharts, which we hope can be shared more broadly to help others similarly understand how these processes flow at a macro level. 
 
 ## Collaborators
 
@@ -43,7 +42,7 @@ Welcome to the mri overview in flowcharts project. Our goal: Bring newcomers tog
 </div>
 
 
-```{r, echo=FALSE, warning=FALSE}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 #Data Wrangling
 library(dplyr)
 #Run library collapsible Tree
@@ -54,7 +53,6 @@ library(gsheet)
 library(DT)
 #Read in csvs (for the time being until everything is on drive)
 library(readr)
-
 ```
 
 
