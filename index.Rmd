@@ -24,9 +24,9 @@ Welcome to the MRI overview in flowcharts project. Our goal: Bring newcomers tog
 | Name             | Role     | email                             | GitHub    | Institution  |
 | ---------------- | -------- | --------------------------------- | --------- | ------------ |
 | Annalysa Lovos   | Lead     | aklovos@email.arizona.edu         | annalysa  | University of Arizona           |
-| Amelia Miramonti | Co-Lead  | amelia.miramonti@gmail.com        | amelia-m  |              |
+| Amelia Miramonti | Co-Lead  | amelia.miramonti@gmail.com        | amelia-m  | University of Nebraska - Lincoln|
 | Stepheni Uh      |          |                                   | stephuh2  |              |
-| Allison Londeree |          | alonderee@gmail.com               | londeree4 | The Ohio State University       |
+| Allison Londeree | Co-Lead  | alonderee@gmail.com               | londeree4 | The Ohio State University       |
 | Nazek Queder     |          | nqueder@hs.uci.edu                | nqueder   | UC Irvine                       |
 | Jinyi Hung       |          | jinyihung@gmail.com               | jinyihung |              |
 | Tuba Sahin       |          | tubasahin.psyc@gmail.com          | tubapona  |              |
