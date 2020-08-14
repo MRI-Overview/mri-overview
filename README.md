@@ -10,7 +10,7 @@ Welcome to the mri overview in flowcharts project. Our goal: Bring newcomers tog
 * [Jitsi Room]( https://meet.jit.si/Hello-mri-overview) for quick and easy project meetings. 
 * [The Vocab Sheet](https://docs.google.com/spreadsheets/d/1U3Qi4Ns4POn9R8m0SEua6zU0cO5jjseMq3WrctPEtyo/edit?usp=sharing) of MRI terms! 
 * [The Streamlined Content for Flowchart](https://docs.google.com/spreadsheets/d/1OS48G1jEBcArDIN76jh5PFHGoJSeqfGSTE23ve7lfjk/edit?usp=sharing) is what will actually be populated into the website.
-* Content editing tutorial is in the works! 
+* Content editing tutorial is located below.
 * List of tasks as well as what has been completed can be found in the [projects page](https://github.com/MRI-Overview/mri-overview/projects/1)
 
 
@@ -81,6 +81,7 @@ If you are doing this for the first time, you may need to install some packages 
 OR sometimes there is a banner at the top of the gui that will allow you to install packages. Which ever you prefer! 
 
 **Communicating with Github**
+
 Next, we need to get this new beautiful version onto GitHub! Switch over to the terminal tab in RStudio
 
 To make sure git is working type `git status` This should yield some information about what changes have been made, and if you need to `pull` a more recent repo. If you are a version behind, use `git pull` to get up to date. It's a good idea to do this any time you want to make a change. 
@@ -100,3 +101,5 @@ Woot Woot! You made it!
 ### To update site including code changes
 
 Say you want to edit the actual structure of the index.Rmd. Please feel free to by following the same steps as above! One additional thing you may want to do before commiting changes to github is just double checking the code by knitting and looking at the HTML to make sure your changes look correct!
+
+A new branch has also been created to help with larger changes.
