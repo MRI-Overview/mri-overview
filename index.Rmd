@@ -56,7 +56,7 @@ library(readr)
 ```
 
 
-## fMRI Steps {.tabset .tabset-fade}
+## sMRI Steps {.tabset .tabset-fade}
 <div style="margin-bottom:50px;">
 </div>
 ### Flow chart
@@ -65,12 +65,12 @@ library(readr)
 #load in most recent vocab URL
 contenturl <- 'https://docs.google.com/spreadsheets/d/1OS48G1jEBcArDIN76jh5PFHGoJSeqfGSTE23ve7lfjk/edit?usp=sharing'
 #make into sheet
-content <- gsheet2tbl(contenturl)
+sMRI <- gsheet2tbl(contenturl)
 
 ```
 
 ```{r, echo=FALSE}
-collapsibleTree(content, c("Section", "Node"), collapsed = FALSE)
+collapsibleTree(sMRI, c("Section", "Node"), collapsed = FALSE)
 ```
 
 ### Resources
@@ -83,23 +83,66 @@ collapsibleTree(content, c("Section", "Node"), collapsed = FALSE)
 </div>
 ### Flow chart
 ```{r, echo=FALSE, results="hide"}
-
+  #load in most recent vocab URL
+contenturl <- 'https://docs.google.com/spreadsheets/d/1OS48G1jEBcArDIN76jh5PFHGoJSeqfGSTE23ve7lfjk/edit#gid=2105350491'
+#make into sheet
+DTI <- gsheet2tbl(contenturl)
 
 ```
 
 ```{r, echo=FALSE}
 #collapsibleTree(org, c("Manager", "Employee"), collapsed = FALSE)
+collapsibleTree(DTI, c("Section", "Node"), collapsed = FALSE)
 ```
 
 ### Resources
 <div style="margin-bottom:50px;">
 </div>
 
+## rs fMRI {.tabset .tabset-fade}
+<div style="margin-bottom:50px;">
+</div>
+### Flow chart
+```{r, echo=FALSE, results="hide"}
+  #load in most recent vocab URL
+contenturl <- 'https://docs.google.com/spreadsheets/d/1OS48G1jEBcArDIN76jh5PFHGoJSeqfGSTE23ve7lfjk/edit#gid=1662967562'
+#make into sheet
+rsfMRI <- gsheet2tbl(contenturl)
+
+```
+
+```{r, echo=FALSE}
+#collapsibleTree(org, c("Manager", "Employee"), collapsed = FALSE)
+collapsibleTree(rsfMRI, c("Section", "Node"), collapsed = FALSE)
+```
+
+### Resources
+<div style="margin-bottom:50px;">
+</div>
+
+## task fMRI {.tabset .tabset-fade}
+<div style="margin-bottom:50px;">
+</div>
+### Flow chart
+```{r, echo=FALSE, results="hide"}
+contenturl1 <- 'https://docs.google.com/spreadsheets/d/1OS48G1jEBcArDIN76jh5PFHGoJSeqfGSTE23ve7lfjk/edit#gid=1730333169'
+#make into sheet
+taskfMRI <- gsheet2tbl(contenturl1)
+
+```
+
+```{r, echo=FALSE}
+collapsibleTree(taskfMRI, c("Section", "Node"), collapsed = FALSE)
+```
+
+### Resources
+<div style="margin-bottom:50px;">
+</div>
 
 # Vocab
 ```{r, echo = FALSE}
 #load in most recent vocab URL
-vocaburl <- 'docs.google.com/spreadsheets/d/1U3Qi4Ns4POn9R8m0SEua6zU0cO5jjseMq3WrctPEtyo/edit?usp=slack&ts=5f24816f'
+vocaburl <- 'https://docs.google.com/spreadsheets/d/1U3Qi4Ns4POn9R8m0SEua6zU0cO5jjseMq3WrctPEtyo/edit#gid=0'
 #make into sheet
 vocab <- gsheet2tbl(vocaburl)
 #remove url creation columns

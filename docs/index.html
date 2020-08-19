@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
 
@@ -21,7 +20,7 @@
 <script src="site_libs/collapsibleTree-binding-0.1.7/collapsibleTree.js"></script>
 <script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
 <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="site_libs/datatables-binding-0.13/datatables.js"></script>
+<script src="site_libs/datatables-binding-0.15/datatables.js"></script>
 <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -55,10 +54,11 @@
 
 
 <div id="TOC" class="toc">
+<div class="inner">
 <ul>
 <li><a href="#overview">Overview</a><ul>
 <li><a href="#collaborators">Collaborators</a></li>
-<li><a href="#fmri-steps">fMRI Steps</a><ul>
+<li><a href="#smri-steps">sMRI Steps</a><ul>
 <li><a href="#flow-chart">Flow chart</a></li>
 <li><a href="#resources">Resources</a></li>
 </ul></li>
@@ -66,9 +66,18 @@
 <li><a href="#flow-chart-1">Flow chart</a></li>
 <li><a href="#resources-1">Resources</a></li>
 </ul></li>
+<li><a href="#rs-fmri">rs fMRI</a><ul>
+<li><a href="#flow-chart-2">Flow chart</a></li>
+<li><a href="#resources-2">Resources</a></li>
+</ul></li>
+<li><a href="#task-fmri">task fMRI</a><ul>
+<li><a href="#flow-chart-3">Flow chart</a></li>
+<li><a href="#resources-3">Resources</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#vocab">Vocab</a></li>
 </ul>
+</div>
 </div>
 
 <div id="content-wrapper">
@@ -183,15 +192,15 @@
 
 </div>
 </div>
-<div id="fmri-steps" class="section level2 tabset tabset-fade">
-<h2>fMRI Steps</h2>
+<div id="smri-steps" class="section level2 tabset tabset-fade">
+<h2>sMRI Steps</h2>
 <div style="margin-bottom:50px;">
 
 </div>
 <div id="flow-chart" class="section level3">
 <h3>Flow chart</h3>
-<div id="htmlwidget-42660cd1002ad2e4b756" style="width:672px;height:480px;" class="collapsibleTree html-widget"></div>
-<script type="application/json" data-for="htmlwidget-42660cd1002ad2e4b756">{"x":{"data":{"name":"content","children":[{"name":"MRI acquisition","children":[{"name":"Structural sequence"}]},{"name":"Pre-processing","children":[{"name":"Quality control"},{"name":"Convert files"},{"name":"Swap orientation"},{"name":"Brain extraction"},{"name":"Registration"},{"name":"Segmentation"}]},{"name":"Post-processing","children":[{"name":"Surface labeling"},{"name":"VBM labeling"},{"name":"Tissue integrity"}]},{"name":"Statistical analyses","children":[{"name":"Surface-based"},{"name":"VBM"},{"name":"Tissue Integrity"}]}]},"options":{"hierarchy":["Section","Node"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":false,"zoomable":true,"margin":{"top":20,"bottom":20,"left":60,"right":120},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-458ff7e7b916ab8160fc" style="width:672px;height:480px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-458ff7e7b916ab8160fc">{"x":{"data":{"name":"sMRI","children":[{"name":"MRI acquisition","children":[{"name":"Structural sequence"}]},{"name":"Pre-processing","children":[{"name":"Quality control"},{"name":"Convert files"},{"name":"Swap orientation"},{"name":"Brain extraction"},{"name":"Registration"},{"name":"Segmentation"}]},{"name":"Post-processing","children":[{"name":"Surface labeling"},{"name":"VBM labeling"},{"name":"Tissue integrity"}]},{"name":"Statistical analyses","children":[{"name":"Surface-based"},{"name":"VBM"},{"name":"Tissue Integrity"}]}]},"options":{"hierarchy":["Section","Node"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":false,"zoomable":true,"margin":{"top":20,"bottom":20,"left":45,"right":120},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="resources" class="section level3">
 <h3>Resources</h3>
@@ -207,8 +216,44 @@
 </div>
 <div id="flow-chart-1" class="section level3">
 <h3>Flow chart</h3>
+<div id="htmlwidget-2b0bdc945613d4be8a54" style="width:672px;height:480px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2b0bdc945613d4be8a54">{"x":{"data":{"name":"DTI","children":[{"name":"MRI acquisition","children":[{"name":"dMRI sequence"}]},{"name":"Pre-processing","children":[{"name":"Quality control"},{"name":"Convert files"},{"name":"Skull stripping"},{"name":"Co-registration"},{"name":"Corrections"},{"name":"Fit tensors"},{"name":"Segmentation"},{"name":"Smoothing"}]},{"name":"Post-processing","children":[{"name":"Spatial normalization"},{"name":"Fiber tracking"},{"name":"Visualization"}]},{"name":"Statistical analyses","children":[{"name":"ROI analysis"},{"name":"Voxel-based analysis"},{"name":"TBSS"},{"name":"Tractography"}]}]},"options":{"hierarchy":["Section","Node"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":false,"zoomable":true,"margin":{"top":20,"bottom":20,"left":40,"right":130},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="resources-1" class="section level3">
+<h3>Resources</h3>
+<div style="margin-bottom:50px;">
+
+</div>
+</div>
+</div>
+<div id="rs-fmri" class="section level2 tabset tabset-fade">
+<h2>rs fMRI</h2>
+<div style="margin-bottom:50px;">
+
+</div>
+<div id="flow-chart-2" class="section level3">
+<h3>Flow chart</h3>
+<div id="htmlwidget-22ed396cab34466401a3" style="width:672px;height:480px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-22ed396cab34466401a3">{"x":{"data":{"name":"rsfMRI","children":[{"name":"MRI acquisition","children":[{"name":"Functional scan"}]},{"name":"Pre-processing","children":[{"name":"Quality control"},{"name":"Convert files"},{"name":"Correction"},{"name":"Filtering"},{"name":"Co-registration"},{"name":"Noise regression"},{"name":"Volume Censoring"},{"name":"ICA-based clean-up"},{"name":"smoothing"}]},{"name":"Post-processing","children":[{"name":"Voxel-based"},{"name":"Node-based"},{"name":"ICA"}]},{"name":"Statistical analyses","children":[{"name":"Voxel-based"},{"name":"Node-based"}]}]},"options":{"hierarchy":["Section","Node"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":false,"zoomable":true,"margin":{"top":20,"bottom":20,"left":55,"right":115},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="resources-2" class="section level3">
+<h3>Resources</h3>
+<div style="margin-bottom:50px;">
+
+</div>
+</div>
+</div>
+<div id="task-fmri" class="section level2 tabset tabset-fade">
+<h2>task fMRI</h2>
+<div style="margin-bottom:50px;">
+
+</div>
+<div id="flow-chart-3" class="section level3">
+<h3>Flow chart</h3>
+<div id="htmlwidget-a99e9c40534f39ed2710" style="width:672px;height:480px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a99e9c40534f39ed2710">{"x":{"data":{"name":"taskfMRI","children":[{"name":"MRI acquisition","children":[{"name":"Functional scan"}]},{"name":"Pre-processing","children":[{"name":"Quality control"},{"name":"Convert files"},{"name":"Set origin to AC-PC"},{"name":"Co-registration"},{"name":"Corrections"},{"name":"Realignment"},{"name":"Normalization"},{"name":"Temporal filtering"},{"name":"Global intensity normalization"},{"name":"Smoothing"},{"name":"Checks"}]},{"name":"Post-processing","children":[{"name":"Brain Mapping"},{"name":"Contrasts"}]},{"name":"Statistical analyses","children":[{"name":"Functional Connectivity"},{"name":"Effective connectivity"},{"name":"Multivariate connectivity"},{"name":"GLM"},{"name":"Other possibilities"}]}]},"options":{"hierarchy":["Section","Node"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":false,"zoomable":true,"margin":{"top":20,"bottom":20,"left":65,"right":175},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="resources-3" class="section level3">
 <h3>Resources</h3>
 <div style="margin-bottom:50px;">
 
@@ -218,13 +263,16 @@
 </div>
 <div id="vocab" class="section level1">
 <h1>Vocab</h1>
-<div id="htmlwidget-2cc9a94da7497ed05063" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2cc9a94da7497ed05063">{"x":{"filter":"none","extensions":["RowGroup"],"data":[["MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Post-processing","Post-processing","Post-processing","Post-processing","Post-processing","Post-processing","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses"],["volume","voxels","3D matrix","flip angle","spin echo","echo time","repetition time","acquisition time","field of view","registration","normalization","warping/unwarping","fourier transform","DICOM","nifti","k-space","spatial smoothing","temporal filtering","motion correction","nuisance regression","segmentation","brain mapping","cognitive subtractions","Amie","fiber tracking",null,null,"general linear model","multi-voxel pattern analysis","representational similarity analysis","independent component analysis","principle component analysis","dynamic causal modeling","morphometry","voxel-based morphometry"],[null,null,null,"FA","SE","TE","TR","TA","FOV",null,null,null,"FT",null,".nii file",null,null,null,null,null,null,null,"aka contrasts","Amie2",null,null,null,"GLM","MVPA","RSA","ICA","PCA","DCM","test","VBM"],["volume data recorded at one single time point representing the space that the brain is occupying","the unit used to measure MRI data in 3D. Each voxel has a specific dimension (e.g. 1mm x 1mm x 1mm; a cube)","an arranged standard anatomical volume with an isotropic voxel resolution of 1mm contains almost 17 million voxels.","the amount of rotation the net magnetization vexperiences during application of the radiofrequency pulse, measured in degrees or radians.","pulse sequence of MRI from 90 degrees radio frequency, 180 degrees RF, echo and return to the phase.","the time between inducing RF excitation pulse until the peak of the spin echo.","time required to scan one volume","time required to scan one slice. TA = TR - (TR / number of slices)","defines the extent of a slice, e.g. 256 mm x 256 mm","alignment and overlay of data from 2 images (e.g. 1 subject's structural and functional) so that common features overlap","a form of registration that maps each subject's brain image to a reference image in order to allow comparison across subjects","warping is what is done in spatial normalization in order to fit sujects' grey matter images to stereotazxic space","a transformation often run on time-series data that decomposes it into its constituent frequencies","common format for raw medical imaging in which the MRI scanner outputs.","most common format for newly generated data.","special frequency representation of the MRI image via fourier transform.","a process of averaging data points with their neighbors, having the effect of a low-pass filter (high frequencies removed from the data while low frequencies are enhanced)","a technique to remove or attenuate frequencies int he raw data that are not of interest.in order to improve signal; involves choosing which frequencies are signal and which you will discard as noise","can be done either retrospectively (when pre-processing) or proactively (when acquiring scan) to attenuate the effects of subject movements of more than 1 millimeter during the scan. Many methods have been developed; research options for the software you will use and what others in your specific field have used.","regressing out covariates that are of no interest (eg. head movement)","the laebling process that allows you to differentiate the tissue types and/or structures within each voxel","to localize brain activity for statistical parametric mapping","taking the differences in the hemodynamic response function between the task versus the control state in fMRI","Amie test website update","to make the white matter tracts visible in dMRI",null,"test","a statistical model for examining how mutliple variables affect selected continuous variables","a form of multivariate analysis using the information contained in distributed patterns of neural activity to infer the functional role of brain networks. Has a specific analysis pipeline detailed in the linked article.","a multivariate method that can be used to extract information about distributed patterns of representation across the brain. Related to population vector analysis.","takes independent data points and maps them by their time courses (spatial), can be also temporal.","a dimensionality-reduction method that can be used on large datasets to transform large sets of variables into smaller ones that still contain most of the information in the large set","a Bayesian model comparison procedure that looks at different models of how time series data were generated, modeling the dynamics of hidden states inthe nodes of a probabilistic graphecal model","brain morphometry is the general term for an approach in which brain structures are measured and compared. Includes voxel-based, deformation-based, pattern-based, and surface-based T1-weighted morphometry, and fiber-tracking techniques in diffusion-weighted morphometry approaches","a voxel-wise comparison of multiple brain images so that regional brain differences can be identified"],[null,null,"<a href='http://www.fmri4newbies.com/'>MRI 4 Newbies<\/a>","http://mriquestions.com/what-is-flip-angle.html",null,"<a href='https://onlinelibrary.wiley.com/doi/abs/10.1002/9780470034590.emrstm1292'>MRI with Zero Echo Time<\/a>",null,null,null,null,"<a href='https://www.frontiersin.org/articles/10.3389/fnins.2019.01249/full'>Effects of Different Normalizations<\/a>",null,null,null,null,"<a href='http://mriquestions.com/what-is-k-space.html'>What is k-space?<\/a>",null,"https://en.wikibooks.org/wiki/Neuroimaging_Data_Processing/Temporal_Filtering#:~:text=Temporal%20filtering%20aims%20to%20remove,interest%20and%20which%20are%20noise.","https://pubmed.ncbi.nlm.nih.gov/26864183/#:~:text=Since%20the%20beginning%20of%20clinical,suppress%20or%20correct%20motion%20artefacts.&text=Retrospective%20motion%20correction%20modifies%20the,update%20of%20the%20data%20acquisition.","https://www.coursera.org/lecture/functional-mri/module-19-filtering-a-nuisance-covariance-5hnmP","https://onlinelibrary.wiley.com/doi/abs/10.1002/ima.22201#:~:text=Medical%20image%20segmentation%20of%20brain,structure%20of%20each%20pixel%2Fvoxel.&text=Acquisition%20parameters%20of%20MRI%20can,to%20obtain%20different%20gray%20values.",null,null,null,null,null,null,null,"https://www.hindawi.com/journals/cmmm/2012/961257/","https://roberttlange.github.io/posts/2019/06/blog-post-3/","<a href='https://www.fmrib.ox.ac.uk/datasets/techrep/tr01mj2/tr01mj2.pdf'>ICA in fMRI: A Basic Introduction<\/a>","https://builtin.com/data-science/step-step-explanation-principal-component-analysis","http://www.scholarpedia.org/article/Dynamic_causal_modeling","http://www.neuro.uni-jena.de/pdf-files/Gaser-Neuroeconomics.pdf","https://www.fil.ion.ucl.ac.uk/spm/doc/papers/am_vbmreview.pdf"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Section<\/th>\n      <th>Term<\/th>\n      <th>Abbreviation<\/th>\n      <th>Definition<\/th>\n      <th>Link to More Information<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"rowGroup":{"dataSrc":0},"columnDefs":[{"visible":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a67e74e746a7a75e7fdf" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a67e74e746a7a75e7fdf">{"x":{"filter":"none","extensions":["RowGroup"],"data":[["MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","MRI acquisition","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Pre-processing","Post-processing","Post-processing","Post-processing","Post-processing","Post-processing","Post-processing","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses","Statistical analyses"],["volume","voxels","3D matrix","flip angle","spin echo","echo time","repetition time","acquisition time","field of view","registration","normalization","warping/unwarping","fourier transform","DICOM","nifti","k-space","spatial smoothing","temporal filtering","motion correction","nuisance regression","segmentation","brain mapping","cognitive subtractions","Amie","fiber tracking",null,null,"general linear model","multi-voxel pattern analysis","representational similarity analysis","independent component analysis","principle component analysis","dynamic causal modeling","morphometry","voxel-based morphometry"],[null,null,null,"FA","SE","TE","TR","TA","FOV",null,null,null,"FT",null,".nii file",null,null,null,null,null,null,null,"aka contrasts","Amie2",null,null,null,"GLM","MVPA","RSA","ICA","PCA","DCM","test","VBM"],["volume data recorded at one single time point representing the space that the brain is occupying","the unit used to measure MRI data in 3D. Each voxel has a specific dimension (e.g. 1mm x 1mm x 1mm; a cube)","an arranged standard anatomical volume with an isotropic voxel resolution of 1mm contains almost 17 million voxels.","the amount of rotation the net magnetization vexperiences during application of the radiofrequency pulse, measured in degrees or radians.","pulse sequence of MRI from 90 degrees radio frequency, 180 degrees RF, echo and return to the phase.","the time between inducing RF excitation pulse until the peak of the spin echo.","time required to scan one volume","time required to scan one slice. TA = TR - (TR / number of slices)","defines the extent of a slice, e.g. 256 mm x 256 mm","alignment and overlay of data from 2 images (e.g. 1 subject's structural and functional) so that common features overlap","a form of registration that maps each subject's brain image to a reference image in order to allow comparison across subjects","warping is what is done in spatial normalization in order to fit sujects' grey matter images to stereotazxic space","a transformation often run on time-series data that decomposes it into its constituent frequencies","common format for raw medical imaging in which the MRI scanner outputs.","most common format for newly generated data.","special frequency representation of the MRI image via fourier transform.","a process of averaging data points with their neighbors, having the effect of a low-pass filter (high frequencies removed from the data while low frequencies are enhanced)","a technique to remove or attenuate frequencies int he raw data that are not of interest.in order to improve signal; involves choosing which frequencies are signal and which you will discard as noise","can be done either retrospectively (when pre-processing) or proactively (when acquiring scan) to attenuate the effects of subject movements of more than 1 millimeter during the scan. Many methods have been developed; research options for the software you will use and what others in your specific field have used.","regressing out covariates that are of no interest (eg. head movement)","the laebling process that allows you to differentiate the tissue types and/or structures within each voxel","to localize brain activity for statistical parametric mapping","taking the differences in the hemodynamic response function between the task versus the control state in fMRI","Amie test website update","to make the white matter tracts visible in dMRI",null,null,"a statistical model for examining how mutliple variables affect selected continuous variables","a form of multivariate analysis using the information contained in distributed patterns of neural activity to infer the functional role of brain networks. Has a specific analysis pipeline detailed in the linked article.","a multivariate method that can be used to extract information about distributed patterns of representation across the brain. Related to population vector analysis.","takes independent data points and maps them by their time courses (spatial), can be also temporal.","a dimensionality-reduction method that can be used on large datasets to transform large sets of variables into smaller ones that still contain most of the information in the large set","a Bayesian model comparison procedure that looks at different models of how time series data were generated, modeling the dynamics of hidden states inthe nodes of a probabilistic graphecal model","brain morphometry is the general term for an approach in which brain structures are measured and compared. Includes voxel-based, deformation-based, pattern-based, and surface-based T1-weighted morphometry, and fiber-tracking techniques in diffusion-weighted morphometry approaches","a voxel-wise comparison of multiple brain images so that regional brain differences can be identified"],[null,null,"<a href='http://www.fmri4newbies.com/'>MRI 4 Newbies<\/a>","<a href='http://mriquestions.com/what-is-flip-angle.html'>Flip (or Tip) Angle\r<\/a>",null,"<a href='https://onlinelibrary.wiley.com/doi/abs/10.1002/9780470034590.emrstm1292'>MRI with Zero Echo Time<\/a>",null,null,null,null,"<a href='https://www.frontiersin.org/articles/10.3389/fnins.2019.01249/full'>Effects of Different Normalizations<\/a>",null,null,null,null,"<a href='http://mriquestions.com/what-is-k-space.html'>What is k-space?<\/a>",null,"<a href='https://en.wikibooks.org/wiki/Neuroimaging_Data_Processing/Temporal_Filtering#:~:text=Temporal%20filtering%20aims%20to%20remove,interest%20and%20which%20are%20noise.'>Temporal Filtering<\/a>","<a href='https://pubmed.ncbi.nlm.nih.gov/26864183/#:~:text=Since%20the%20beginning%20of%20clinical,suppress%20or%20correct%20motion%20artefacts.&text=Retrospective%20motion%20correction%20modifies%20the,update%20of%20the%20data%20acquisition.'>Motion correction<\/a>","<a href='https://www.coursera.org/lecture/functional-mri/module-19-filtering-a-nuisance-covariance-5hnmP'>Filtering & Nuisance Covariates<\/a>","<a href='https://onlinelibrary.wiley.com/doi/abs/10.1002/ima.22201#:~:text=Medical%20image%20segmentation%20of%20brain,structure%20of%20each%20pixel%2Fvoxel.&text=Acquisition%20parameters%20of%20MRI%20can,to%20obtain%20different%20gray%20values.'>Segmentation<\/a>",null,null,null,null,null,null,null,"<a href='https://www.sciencedirect.com/science/article/abs/pii/S1364661306001847'>Beyond mind-reading: multi-voxel pattern analysis of fMRI data<\/a>","<a href='https://roberttlange.github.io/posts/2019/06/blog-post-3/'>Representational Similarity<\/a>","<a href='https://www.fmrib.ox.ac.uk/datasets/techrep/tr01mj2/tr01mj2.pdf'>ICA in fMRI: A Basic Introduction<\/a>","<a href='https://builtin.com/data-science/step-step-explanation-principal-component-analysis'>PCA<\/a>","<a href='http://www.scholarpedia.org/article/Dynamic_causal_modeling'>DCM<\/a>","<a href='http://www.neuro.uni-jena.de/pdf-files/Gaser-Neuroeconomics.pdf'>Structural MRI: Morphometry<\/a>","<a href='https://www.fil.ion.ucl.ac.uk/spm/doc/papers/am_vbmreview.pdf'>VBM<\/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Topic<\/th>\n      <th>Term<\/th>\n      <th>Abbreviation<\/th>\n      <th>Definition<\/th>\n      <th>Link to More Information<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"rowGroup":{"dataSrc":0},"columnDefs":[{"visible":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
     </section>
   </div>
 </div>
 
+
+
+<!-- code folding -->
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
