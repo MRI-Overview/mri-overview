@@ -99,7 +99,7 @@ collapsibleTree(DTI, c("Section", "Node"), collapsed = FALSE)
 <div style="margin-bottom:50px;">
 </div>
 
-## rs fMRI {.tabset .tabset-fade}
+## rs fMRI Steps {.tabset .tabset-fade}
 <div style="margin-bottom:50px;">
 </div>
 ### Flow chart
@@ -120,7 +120,7 @@ collapsibleTree(rsfMRI, c("Section", "Node"), collapsed = FALSE)
 <div style="margin-bottom:50px;">
 </div>
 
-## task fMRI {.tabset .tabset-fade}
+## task fMRI Steps {.tabset .tabset-fade}
 <div style="margin-bottom:50px;">
 </div>
 ### Flow chart
